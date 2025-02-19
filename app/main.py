@@ -25,6 +25,14 @@ row1 = st.columns(3)
 row2 = st.columns(3)
 row3 = st.columns(3)
 row4 = st.columns(3)
+st.sidebar.title("Project Details")
+st.sidebar.markdown("""
+- **Project:** Insurance Premium Prediction  
+- **Model:** Linear Regression (Young) / XGBoost (Rest)  
+- **Purpose:** Predict insurance premium based on demographics & medical history  
+- **Tech Stack:** Python, Streamlit, Scikit-learn, XGBoost, Joblib  
+- **Segmentation:** Young (≤ 25 years) / Rest (> 25 years)  
+""")
 
 # Assign inputs to the grid
 with row1[0]:

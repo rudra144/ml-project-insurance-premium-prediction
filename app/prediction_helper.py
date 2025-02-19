@@ -1,11 +1,46 @@
-
-import pandas as pd
+#
+# import os
+# import joblib
+# import pandas as pd
+#
+# # Get the directory from the environment variable
+# MODEL_DIR = os.getenv("MODEL_DIR", "/app/artifacts/")  # Default to /app/artifacts/
+#
+# # Load models dynamically using the environment variable
+# model_young = joblib.load(os.path.join(MODEL_DIR, "model_young.joblib"))
+# model_rest = joblib.load(os.path.join(MODEL_DIR, "model_rest.joblib"))
+# scaler_young = joblib.load(os.path.join(MODEL_DIR, "scaler_young.joblib"))
+# scaler_rest = joblib.load(os.path.join(MODEL_DIR, "scaler_rest.joblib"))
+import os
 import joblib
+import pandas as pd
 
-model_young = joblib.load("app/artifacts/model_young.joblib")
-model_rest = joblib.load("app/artifacts/model_rest.joblib")
-scaler_young = joblib.load("app/artifacts/scaler_young.joblib")
-scaler_rest = joblib.load("app/artifacts/scaler_rest.joblib")
+# Automatically resolve the model directory
+MODEL_DIR = os.getenv("MODEL_DIR", os.path.join(os.getcwd(), "artifacts"))  # Default to local artifacts folder
+
+# Print resolved directory
+print("Resolved MODEL_DIR:", MODEL_DIR)
+
+# Check if directory exists
+if not os.path.exists(MODEL_DIR):
+    print("ERROR: Model directory not found:", MODEL_DIR)
+    exit(1)
+
+# List files in the directory to confirm models exist
+print("Files in MODEL_DIR:", os.listdir(MODEL_DIR))
+
+# Load models with absolute paths
+try:
+    model_young = joblib.load(os.path.join(MODEL_DIR, "model_young.joblib"))
+    model_rest = joblib.load(os.path.join(MODEL_DIR, "model_rest.joblib"))
+    scaler_young = joblib.load(os.path.join(MODEL_DIR, "scaler_young.joblib"))
+    scaler_rest = joblib.load(os.path.join(MODEL_DIR, "scaler_rest.joblib"))
+
+    print("Models loaded successfully! 🚀")
+
+except FileNotFoundError as e:
+    print("ERROR: One or more model files are missing!", e)
+    exit(1)
 
 def calculate_normalized_risk(medical_history):
     risk_scores = {
