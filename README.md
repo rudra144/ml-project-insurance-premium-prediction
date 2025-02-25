@@ -10,6 +10,12 @@ An advanced insurance premium prediction model that uses machine learning techni
 - **Feature Engineering**: Includes risk normalization and feature scaling to optimize the model performance.
 
 ---
+## Streamlit UI Preview
+This project includes a **Streamlit-based web interface** for easy interaction.
+
+![Streamlit UI - Input](img/Streamlit.png)
+![Streamlit UI - Prediction](img/Streamlit _output.png)
+---
 
 ## Installation
 
