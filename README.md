@@ -14,7 +14,7 @@ An advanced insurance premium prediction model that uses machine learning techni
 This project includes a **Streamlit-based web interface** for easy interaction.
 
 ![Streamlit UI - Input](img/Streamlit.png)
-![Streamlit UI - Prediction](img/Streamlit _output.png)
+![Streamlit UI - Prediction](img/Streamlit1.png)
 ---
 
 ## Installation
