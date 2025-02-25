@@ -2,6 +2,11 @@
 
 An advanced insurance premium prediction model that uses machine learning techniques to accurately predict premiums based on user demographics, medical history, and other relevant features. This project employs segmented modeling to handle irregularities across different age groups for improved prediction accuracy.
 
+Live Demo
+
+Check out the deployed Insurance Premium Prediction Model here:https: //ml-project-insurance-premium-prediction-rudhresh.streamlit.app/
+
+This Streamlit-based web application allows users to input their details and get real-time insurance premium predictions using machine learning models.
 ## Features
 
 - **Segmented Modeling**: Separate models for `young` and `rest` age groups to address irregularities in specific age ranges.
